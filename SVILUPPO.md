@@ -13,3 +13,4 @@ Scopo: trovare la fontanella pubblica più vicina in tutta Italia. Stack: HTML/C
 | Data | Cosa |
 |---|---|
 | 14/11/2026 | Creata da Nasone con grafica blu e testi generici; copertura nazionale a tessere. |
+| 14/11/2026 | Tessere statiche come fonte principale: dentro la zona e con dati < 10 giorni nessuna chiamata a Overpass (che resta per fuori zona, dati vecchi o mancanti). |

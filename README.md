@@ -6,7 +6,7 @@ Web app (installabile come app su Android e iPhone) che trova la fontanella pubb
 
 ## Come funziona
 - **Dati:** punti d'acqua potabile di OpenStreetMap (`amenity=drinking_water`, `amenity=fountain` con `drinking_water=yes`, rubinetti potabili, anche come aree).
-- **Tessere pronte:** ogni lunedì un'azione di GitHub scarica tutta Italia con `node tools/genera-tessere.mjs` e la divide in tessere di 0,25° (`data/t/<riga>_<colonna>.json` + `index.json`). L'app scarica solo le tessere attorno a te: i risultati arrivano subito e anche con i server pubblici fuori uso. I server Overpass aggiungono poi le novità.
+- **Tessere pronte:** ogni lunedì un'azione di GitHub scarica tutta Italia con `node tools/genera-tessere.mjs` e la divide in tessere di 0,25° (`data/t/<riga>_<colonna>.json` + `index.json`). L'app scarica solo le tessere attorno a te. Dentro la zona coperta e con dati di meno di 10 giorni usa **solo** quelle: risultati immediati e nessuna richiesta ai server pubblici (che hanno limiti d'uso). Fuori zona, o con tessere vecchie o mancanti, interroga Overpass.
 - **Percorsi:** routing.openstreetmap.de (a piedi). **Mappa:** OpenStreetMap con Leaflet (in `vendor/`).
 - Raggio 1 km, estendibile a 2 / 3,5 / 5 km senza altre richieste.
 

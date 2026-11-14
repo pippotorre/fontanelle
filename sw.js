@@ -1,8 +1,8 @@
 /* Fontanelle — service worker: salva il «guscio» dell'app per aprirla anche con poca rete.
  * Strategia: rete per prima, copia salvata solo offline. Mappe e percorsi arrivano sempre da internet e non si salvano qui.
  * Per forzare l'aggiornamento delle copie salvate cambia VERSION. */
-const VERSION = 'fontanelle-v1';
-const SHELL = ['./', 'index.html', 'css/app.css?v=1', 'js/i18n.js?v=1', 'js/geo.js?v=1', 'js/app.js?v=1', 'vendor/leaflet/leaflet.js', 'vendor/leaflet/leaflet.css', 'img/icon-192.png', 'img/fontanelle.svg', 'manifest.webmanifest'];
+const VERSION = 'fontanelle-v2';
+const SHELL = ['./', 'index.html', 'css/app.css?v=2', 'js/i18n.js?v=2', 'js/geo.js?v=2', 'js/app.js?v=2', 'vendor/leaflet/leaflet.js', 'vendor/leaflet/leaflet.css', 'img/icon-192.png', 'img/fontanelle.svg', 'manifest.webmanifest'];
 
 self.addEventListener('install', (e) => { e.waitUntil(caches.open(VERSION).then((c) => c.addAll(SHELL)).then(() => self.skipWaiting())); });
 self.addEventListener('activate', (e) => {
